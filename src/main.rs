@@ -58,6 +58,11 @@ impl Iterator for AddSubCounter {
     }
 }
 
+// TODO: replace with range 0.. or similar
+//
+// My first try didn't work because the compiler was unhappy about being unable
+// to statically determine the size of a range constructed from user-supplied
+// input.
 #[derive(Debug, Copy, Clone)]
 struct AllIntegers {
     i: i64,
@@ -78,6 +83,7 @@ impl AllIntegers {
     }
 }
 
+// TODO: replace OddIntegers with (0..).step_by(2)
 #[derive(Debug, Copy, Clone)]
 struct OddIntegers {
     i: i64,
@@ -110,6 +116,7 @@ impl OddIntegers {
     }
 }
 
+// 1, 3, 2, 5, 3, 7, 4, 9, 5, 11, 6, 13, 7, ...
 #[derive(Debug, Clone)]
 struct DifferencePartitionSequence {
     i: i64,
@@ -161,6 +168,7 @@ impl DifferencePartitionSequence {
     }
 }
 
+// 1, 2, 5, 7, 12, 15, 22, 26, 35, 40, 51, 57, 70, ...
 #[derive(Debug, Clone)]
 struct PartitionSequence {
     i: i64,
