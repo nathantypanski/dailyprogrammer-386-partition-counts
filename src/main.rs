@@ -298,7 +298,7 @@ mod tests {
         let expect = [1, 2, 5, 7, 12, 15, 22, 26, 35, 40, 51, 57, 70].iter();
 
         for (a, r) in expect.zip(dps) {
-            println!("got: {:?} expect: {:?}", r, a);
+            assert_eq!(&r, a);
         }
     }
 }
